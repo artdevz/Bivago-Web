@@ -1,0 +1,17 @@
+<h2>Avaiables Rooms</h2>
+
+<label for="maxPrice">Max Price:</label>
+<input type="number" id="maxPrice" [(ngModel)]="maxPrice"/>
+<label for="maxCapacity">Max Capacity:</label>
+<input type="number" id="maxCapacity" [(ngModel)]="maxCapacity">
+
+<button (click)="filterRooms()">Filtrar</button>
+
+<hr>
+
+<div *ngFor="let room of rooms">
+    <p>ID: {{ room.id }}</p>
+    <p>Price: {{ room.price }}</p>
+    <p>Capacity: {{ room.capacity }}</p>
+    <hr>
+</div>
