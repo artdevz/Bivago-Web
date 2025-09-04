@@ -1,5 +1,17 @@
 <h2>Avaiables Rooms</h2>
 
+<label for="country">Country:</label>
+<ng-select
+  [items]="countries"
+  bindLabel="display"
+  bindValue="code"
+  [(ngModel)]="country"
+  [searchable]="true"
+  placeholder="Select a country">
+</ng-select>
+
+<label for="City">City:</label>
+<input type="text" id="city" [(ngModel)]="city">
 <label for="maxPrice">Max Price:</label>
 <input type="number" id="maxPrice" [(ngModel)]="maxPrice"/>
 <label for="maxCapacity">Max Capacity:</label>
@@ -10,7 +22,10 @@
 <hr>
 
 <div *ngFor="let room of rooms">
-    <p>ID: {{ room.id }}</p>
+    <p>Country: {{ room.country }}</p>
+    <p>Division: {{ room.division }}</p>
+    <p>City: {{ room.city }}</p>
+    <p>Score: {{ room.score }}</p>
     <p>Price: {{ room.price }}</p>
     <p>Capacity: {{ room.capacity }}</p>
     <hr>
