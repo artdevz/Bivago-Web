@@ -16,7 +16,7 @@ export interface Room {
   providedIn: 'root'
 })
 export class RoomService {
-  private apiUrl = "http://localhost:8080/rooms"
+  private API = "http://localhost:8080/rooms"
 
   constructor(private http: HttpClient) {}
 
@@ -28,7 +28,7 @@ export class RoomService {
     if (filters?.maxPrice != null) params.set("maxPrice", filters.maxPrice.toString());
     if (filters?.maxCapacity != null) params.set("maxCapacity", filters.maxCapacity.toString());
 
-    const url = `${this.apiUrl}?${params.toString()}`;
+    const url = `${this.API}?${params.toString()}`;
     return this.http.get<Room[]>(url);
   }
 }

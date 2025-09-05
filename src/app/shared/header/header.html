@@ -1,0 +1,9 @@
+<header class="header">
+    <a href="/">Bivago</a>
+
+    <div class="user-info">
+        <span>Welcome, {{ username }}</span>
+        <button class="btn-login" *ngIf="!username" (click)="signin()">Sign In</button>
+        <button class="btn-logout" *ngIf="username" (click)="signout()">Sign Out</button>
+    </div>
+</header>
